@@ -321,3 +321,48 @@ footer h5{
 
 
 /*MEDIA QUERIES PARA ADAPTABILIDAD A MÓVIL*/
+
+/*nav en móvil*/
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5rem;
+  }
+
+  .nav-list {
+    flex-direction: row;
+    align-items: space-around;
+    max-width: none;
+  }
+
+  .nav img {
+    width: 180px;
+  }
+
+  .nav.scrolled{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+    justify-content: center;
+    gap: 0;
+    z-index: 1000;
+    background: rgba(230, 70, 138, 0.95);
+    backdrop-filter: blur(8px);
+  }
+
+  .nav.scrolled .nav-list{
+    justify-content: center;
+    max-width: none;
+  }
+
+  .nav.scrolled img {
+    display: none;
+    transform: translateY(-20px);
+    pointer-events: none;
+  }
+
+}
