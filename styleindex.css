@@ -350,7 +350,6 @@ footer h5{
     justify-content: center;
     gap: 0;
     z-index: 1000;
-    background: rgba(230, 70, 138, 0.95);
     backdrop-filter: blur(8px);
   }
 
