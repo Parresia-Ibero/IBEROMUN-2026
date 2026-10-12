@@ -328,12 +328,15 @@ footer h5{
     flex-direction: column;
     gap: 1rem;
     padding: 1.5rem;
+    box-sizing: border-box;
   }
 
   .nav-list {
     flex-direction: row;
-    align-items: space-around;
+    align-items: center;
+    justify-content: space-around;
     max-width: none;
+    width: 100%;
   }
 
   .navegacion img {
@@ -346,8 +349,9 @@ footer h5{
     top: 0;
     left: 0;
     width: 100%;
+    box-sizing: border-box;
     height: auto;
-    padding: 3rem;
+    padding: 1rem;
     justify-content: center;
     gap: 0;
     z-index: 1000;
@@ -355,8 +359,9 @@ footer h5{
   }
 
   .navegacion .scrolled .nav-list{
-    justify-content: center;
+    justify-content: space-around;
     max-width: none;
+    width: 100%;
   }
 
   .navegacion .scrolled img {
