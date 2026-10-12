@@ -338,6 +338,7 @@ footer h5{
 
   .navegacion img {
     width: 180px;
+    height: auto;
   }
 
   .navegacion .scrolled{
@@ -346,7 +347,7 @@ footer h5{
     left: 0;
     width: 100%;
     height: auto;
-    padding: 1rem;
+    padding: 3rem;
     justify-content: center;
     gap: 0;
     z-index: 1000;
