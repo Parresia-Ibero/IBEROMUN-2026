@@ -345,23 +345,11 @@ footer h5{
   }
 
   .navegacion .scrolled{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    box-sizing: border-box;
-    height: auto;
-    padding: 1rem;
-    justify-content: center;
-    gap: 0;
-    z-index: 1000;
-    backdrop-filter: blur(8px);
+    display:none;
   }
 
   .navegacion .scrolled .nav-list{
-    justify-content: space-around;
-    max-width: none;
-    width: 100%;
+    display: none;
   }
 
   .navegacion .scrolled img {
