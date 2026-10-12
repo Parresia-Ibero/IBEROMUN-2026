@@ -344,15 +344,15 @@ footer h5{
     height: auto;
   }
 
-  .navegacion .scrolled{
+  .navegacion.scrolled{
     display:none;
   }
 
-  .navegacion .scrolled .nav-list{
+  .navegacion.scrolled .nav-list{
     display: none;
   }
 
-  .navegacion .scrolled img {
+  .navegacion.scrolled img {
     display: none;
     transform: translateY(-20px);
     pointer-events: none;
