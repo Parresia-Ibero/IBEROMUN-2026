@@ -340,7 +340,7 @@ footer h5{
     width: 180px;
   }
 
-  .navegacion.scrolled{
+  .navegacion .scrolled{
     position: fixed;
     top: 0;
     left: 0;
@@ -354,12 +354,12 @@ footer h5{
     backdrop-filter: blur(8px);
   }
 
-  .navegacion.scrolled .nav-list{
+  .navegacion .scrolled .nav-list{
     justify-content: center;
     max-width: none;
   }
 
-  .navegacion.scrolled img {
+  .navegacion .scrolled img {
     display: none;
     transform: translateY(-20px);
     pointer-events: none;
