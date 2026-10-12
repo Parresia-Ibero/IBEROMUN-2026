@@ -1,0 +1,377 @@
+/*Variables*/
+:root{
+    --baseline: 0.5rem; /*8px*/
+    --padding-general: 2rem; /*32px*/
+    --gap-general: 1rem; /*16px*/
+
+    /*Base*/
+    --step--1: 0.875rem;  /* 14px */
+    --step-0: 1rem;       /* 16px (base) */
+
+    /*Texto*/
+    --step-1: 1.25rem;    /* 20px */
+    --step-2: 1.563rem;   /* 25px */
+
+    /*Títulos*/
+    --step-3: 1.953rem;   /* 31px */
+    --step-4: 2.441rem;   /* 39px */
+    --step-5: 3.052rem;   /* 49px */
+    --step-6: 5.61rem;    /* 95.37px */
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: #fdf0d5;
+}
+
+/*GRID*/
+.layout{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr); /*Repite 12 veces esto con respecto a cada fracción*/
+    grid-auto-rows: var(--baseline); /*define las filas del grid*/
+    gap: var(--gap-general);
+    padding: var(--padding-general);
+    min-height: 100vh;
+}
+
+/*HEADER*/
+header{
+    grid-column: span 12;
+    padding: 4rem 2rem;
+    background: #c1121f;
+}
+
+header h1{
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    font-size: var(--step-6);
+    color: #fdf0d5;
+}
+
+
+/* IMAGEN HANDBOOK */
+.absolute {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.absolute img {
+    width: 100%;
+    max-width: 3000px;
+    height: auto;
+    max-height: 95%;
+    object-fit: contain;
+}
+
+
+
+
+/*BOTÓN HANDBOOK*/
+.reglamento{
+    position: relative;
+    grid-column: span 12;
+    padding: 6rem 2rem;
+
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.reglamento h2{
+    font-family: "Cal Sans", sans-serif;
+    font-size: var(--step-3);
+    font-weight: 400;
+    color: #490505;
+}
+
+.reglamento p{
+    font-family: "Kumbh Sans", sans-serif;
+    font-size: var(--step-0);
+    font-weight: 400;
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+}
+
+
+.boton-reglamento a{
+    color: #fdf0d5;
+    text-decoration: none;
+    text-shadow: 4px 6px 15px #940d0dbd;
+}
+
+.boton-reglamento a:link{
+    color: #fdf0d5;
+    text-shadow: 4px 6px 15px #940d0dbd;
+}
+
+.boton-reglamento a:visited{
+    color: #fdf0d5;
+    text-shadow: 4px 6px 15px #940d0dbd;
+}
+
+.boton-reglamento h2{
+    font-family: "Cal Sans", sans-serif;
+    font-weight: 400;
+    font-size: var(--step-3);
+    text-align: center;
+}
+
+.boton-reglamento{
+    background: #490505;
+    width: 300px;
+    border: 2px solid #270202d0;
+    border-radius: 5px;
+    box-shadow: 4px 6px 15px #2b0303e7;
+    align-items: center;
+}
+
+
+
+
+/*VESTIMENTA*/
+.vestimenta{
+    grid-column: span 12;
+    padding: 4rem 2rem;
+    background: #c1121f;
+}
+
+.vestimenta h2{
+    font-family: "Cal Sans", sans-serif;
+    font-weight: 400;
+    font-size: var(--step-4);
+    color: #fdf0d5;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.vestimenta p{
+    font-family: "Kumbh Sans", sans-serif;
+    font-size: var(--step-1);
+    font-weight: 400;
+    color: #fdf0d5;
+    text-align: left;
+    max-width: 1200px;
+}
+
+
+/* TARJETAS */
+
+.tarjetas{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+
+    padding: 4rem 2rem;
+
+    background: #c1121f;
+}
+
+.box1,
+.box2, .box3{
+    flex: 1;
+    max-width: 500px;
+
+    padding: 2rem;
+
+    background: #fdf0d5;
+    border-radius: 2rem;
+
+    text-align: center;
+}
+
+.box1 h2,
+.box2 h2,
+.box3 h2{
+    font-family: "Cal Sans", sans-serif;
+    font-size: var(--step-3);
+}
+
+.box1 p,
+.box2 p{
+    margin-top: 1rem;
+    font-family: "Kumbh Sans", sans-serif;
+    font-size: var(--step-1);
+}
+
+.box1 img, .box2 img{
+    max-width: 300px;
+    height: auto;
+    margin-top: 3rem;
+    object-fit: cover;
+}
+
+
+
+
+
+.box3 ul{
+    font-family: "Kumbh Sans", sans-serif;
+    font-size: var(--step-1);
+    font-weight: 400;
+    color: black;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    text-align: left;
+    max-width: 800px;
+    padding-left: 2rem;
+}
+
+
+
+
+/*BOTÓN HOME*/
+.boton-home a{
+    color: #fdf0d5;
+    text-decoration: none;
+    text-shadow: 4px 6px 15px #660606dc;
+}
+
+.boton-home a:link{
+    color: #fdf0d5;
+    text-shadow: 4px 6px 15px #660606dc;
+}
+
+.boton-home a:visited{
+    color: #fdf0d5;
+    text-shadow: 4px 6px 15px #660606dc;
+}
+
+.boton-home{
+    position: fixed;
+    right: 3rem;
+    bottom: 3rem;
+    background: #c1121ecc;
+    width: 190px;
+    border: 2px solid #270202d0;
+    border-radius: 5px;
+    box-shadow: 4px 6px 15px #2b0303e7;
+}
+
+.boton-home h3{
+    font-family: "Cal Sans", sans-serif;
+    font-weight: 400;
+    font-size: var(--step-2);
+    text-align: center;
+}
+
+
+/*MEDIA QUERIES*/
+
+
+/* ADAPTACIÓN A MÓVILES */
+@media (max-width: 600px) {
+
+    /* ENCABEZADO */
+    header {
+        padding: 2rem 1rem;
+    }
+
+    header h1 {
+        font-size: clamp(2.5rem, 10vw, 3.5rem);
+    }
+
+    /* REGLAMENTO */
+    .reglamento {
+        padding: 3rem 1rem;
+    }
+
+    .reglamento h2,
+    .boton-reglamento h2 {
+        font-size: 1.5rem;
+    }
+
+    .reglamento p {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .boton-reglamento {
+        width: min(100%, 260px);
+    }
+
+    /* CÓDIGO DE VESTIMENTA */
+    .vestimenta {
+        padding: 2rem 1rem;
+    }
+
+    .vestimenta h2 {
+        font-size: clamp(1.5rem, 6vw, 2rem);
+        margin-bottom: 0.75rem;
+    }
+
+    .vestimenta p {
+        font-size: 1rem;
+        line-height: 1.6;
+        max-width: 100%;
+    }
+
+    
+    /* TARJETAS DE VESTIMENTA */
+    .tarjetas {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        padding: 2rem 1rem;
+    }
+
+    .box1,
+    .box2,
+    .box3 {
+        width: 100%;
+        max-width: 450px;
+        padding: 1.5rem 1rem;
+        border-radius: 1.25rem;
+    }
+
+    .box1 h2,
+    .box2 h2,
+    .box3 h2 {
+        font-size: 1.5rem;
+    }
+
+    .box1 p,
+    .box2 p,
+    .box3 ul {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    .box1 img,
+    .box2 img {
+        width: 100%;
+        max-width: 220px;
+        height: auto;
+        margin-top: 1.5rem;
+        object-fit: contain;
+    }
+
+    .box3 ul {
+        padding-left: 1.25rem;
+        overflow-wrap: anywhere;
+    }
+
+    /* BOTÓN FLOTANTE DE INICIO */
+    .boton-home {
+        right: 1rem;
+        bottom: 1rem;
+        width: 140px;
+    }
+
+    .boton-home h3 {
+        font-size: 1.25rem;
+    }
+
+}

@@ -1,0 +1,190 @@
+/*Variables*/
+:root{
+    --baseline: 0.5rem; /*8px*/
+    --padding-general: 2rem; /*32px*/
+    --gap-general: 1rem; /*16px*/
+
+    /*Base*/
+    --step--1: 0.875rem;  /* 14px */
+    --step-0: 1rem;       /* 16px (base) */
+
+    /*Texto*/
+    --step-1: 1.25rem;    /* 20px */
+    --step-2: 1.563rem;   /* 25px */
+
+    /*Títulos*/
+    --step-3: 1.953rem;   /* 31px */
+    --step-4: 2.441rem;   /* 39px */
+    --step-5: 3.052rem;   /* 49px */
+    --step-6: 5.61rem;    /* 95.37px */
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: #fdf0d5;
+}
+
+/*GRID*/
+.layout{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr); /*Repite 12 veces esto con respecto a cada fracción*/
+    grid-auto-rows: var(--baseline); /*define las filas del grid*/
+    gap: var(--gap-general);
+    padding: var(--padding-general);
+    min-height: 100vh;
+}
+
+/*HEADER*/
+header{
+    grid-column: span 12;
+    padding: 4rem 2rem;
+    background: #c1121f;
+}
+
+header h1{
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    font-size: var(--step-6);
+    color: #fdf0d5;
+}
+
+
+
+
+.Mesa1, .Mesas2,
+.Mesas3, .Mesas4,
+.Mesas5, .Mesas6 h2{
+    font-family: "Cal Sans", sans-serif;
+    font-size: var(--step-2);
+    color: #490505;
+    font-weight: 400;
+}
+
+.mesas-dir p{
+    font-family: "Kumbh Sans", sans-serif;
+    font-size: var(--step-1);
+    font-weight: 400;
+    margin-bottom: 8rem;
+}
+
+
+
+/* SECCIÓN DE LA MESA DIRECTIVA */
+.Mesa1, .Mesas2, 
+.Mesas3, .Mesas4, 
+.Mesas5, .Mesas6 {
+    width: 100%;
+    padding: 3rem 5%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* PARRILLA DE FOTOGRAFÍAS */
+.mesas-dir {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 1.5rem;
+
+    width: 100%;
+    max-width: 1200px;
+    margin: 2rem auto;
+}
+
+/* TARJETA DE CADA INTEGRANTE */
+.mesas-dir .item {
+    min-width: 0;
+    padding: 1rem;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: white;
+    border-radius: 15px;
+    text-align: center;
+}
+
+/* CARGO */
+.mesas-dir .item h3 {
+    font-size: 1rem;
+    margin: 0 0 1rem;
+}
+
+/* FOTOGRAFÍAS */
+.mesas-dir .item img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+
+    border-radius: 10px;
+}
+
+/* NOMBRE */
+.mesas-dir .item p {
+    margin: 1rem 0 0;
+    font-size: 0.95rem;
+    overflow-wrap: anywhere;
+}
+
+/* TABLET */
+@media (max-width: 900px) {
+    .mesas-dir {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+/* CELULAR */
+@media (max-width: 550px) {
+    .mesas-dir {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem;
+    }
+
+    .mesas-dir .item {
+        padding: 0.7rem;
+    }
+}
+
+
+/*BOTÓN HOME*/
+.boton-home a{
+    color: #fdf0d5;
+    text-decoration: none;
+    text-shadow: 4px 6px 15px #660606dc;
+}
+
+.boton-home a:link{
+    color: #fdf0d5;
+    text-shadow: 4px 6px 15px #660606dc;
+}
+
+.boton-home a:visited{
+    color: #fdf0d5;
+    text-shadow: 4px 6px 15px #660606dc;
+}
+
+.boton-home{
+    position: fixed;
+    right: 3rem;
+    bottom: 3rem;
+    background: #c1121ecc;
+    width: 190px;
+    border: 2px solid #270202d0;
+    border-radius: 5px;
+    box-shadow: 4px 6px 15px #2b0303e7;
+}
+
+.boton-home h3{
+    font-family: "Cal Sans", sans-serif;
+    font-weight: 400;
+    font-size: var(--step-2);
+    text-align: center;
+}

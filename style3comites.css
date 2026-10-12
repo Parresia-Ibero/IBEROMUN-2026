@@ -1,0 +1,263 @@
+/*Variables*/
+:root{
+    --baseline: 0.5rem; /*8px*/
+    --padding-general: 2rem; /*32px*/
+    --gap-general: 1rem; /*16px*/
+
+    /*Base*/
+    --step--1: 0.875rem;  /* 14px */
+    --step-0: 1rem;       /* 16px (base) */
+
+    /*Texto*/
+    --step-1: 1.25rem;    /* 20px */
+    --step-2: 1.563rem;   /* 25px */
+
+    /*Títulos*/
+    --step-3: 1.953rem;   /* 31px */
+    --step-4: 2.441rem;   /* 39px */
+    --step-5: 3.052rem;   /* 49px */
+    --step-6: 5.61rem;    /* 95.37px */
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: #fdf0d5;
+}
+
+/*GRID*/
+.layout{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr); /*Repite 12 veces esto con respecto a cada fracción*/
+    grid-auto-rows: var(--baseline); /*define las filas del grid*/
+    gap: var(--gap-general);
+    padding: var(--padding-general);
+    min-height: 100vh;
+}
+
+/*HEADER*/
+header{
+    grid-column: span 12;
+    padding: 4rem 2rem;
+    background: #c1121f;
+}
+
+header h1{
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    font-size: var(--step-6);
+    color: #fdf0d5;
+}
+
+
+/*IMAGEN GAFETE*/
+.gafete {
+    position: absolute;
+    right: 9vw;
+    top: -3.5rem;
+    width: 20vw;
+    z-index: 10;
+}
+
+.gafete img {
+    width: 100%;
+    height: auto;
+    display: block;
+    overflow-x: hidden;
+}
+
+
+
+/*SEPARADOR*/
+.separador{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+
+.separador img{
+    width: 800px;
+    height: auto;
+    justify-content: center;
+    align-content: center;
+    overflow-x: hidden;
+}
+
+
+
+/* CONTENEDORES DE LOS COMITÉS */
+.comites1,
+.comites2 {
+    grid-column: span 12;
+    padding: 3rem 2rem;
+}
+
+/* CUADRÍCULA DE TARJETAS */
+.grupos1,
+.grupos2 {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: start;
+}
+
+/* TARJETA INDIVIDUAL */
+.comite {
+    background-color: #fffaf5;
+    border: 1px solid #e4d5cc;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(73, 5, 5, 0.08);
+    transition: box-shadow 0.3s ease;
+}
+
+.comite:hover {
+    box-shadow: 0 6px 18px rgba(73, 5, 5, 0.16);
+}
+
+/* TÍTULO Y TRIÁNGULO */
+.comite summary {
+    font-family: "Cal Sans", sans-serif;
+    font-size: var(--step-2);
+    color: #490505;
+    font-weight: 400;
+    padding: 1.5rem;
+    cursor: pointer;
+    list-style: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+/* Oculta el marcador predeterminado */
+.comite summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Triángulo personalizado */
+.comite summary::after {
+    content: "";
+    flex-shrink: 0;
+    width: 0;
+    height: 0;
+
+    border-top: 7px solid #c1121f;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+
+    transition: transform 0.3s ease;
+}
+
+/* Gira el triángulo cuando se abre */
+.comite[open] summary::after {
+    transform: rotate(180deg);
+}
+
+/* CONTENIDO DESPLEGABLE */
+.contenido-comite {
+    padding: 0 1.5rem 1.5rem;
+    border-top: 1px solid #e4d5cc;
+}
+
+.contenido-comite h2,
+.contenido-comite h3 {
+    font-family: "Cal Sans", sans-serif;
+    font-size: var(--step-2);
+    font-weight: 400;
+    color: #c1121f;
+    margin-top: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.contenido-comite h3 a{
+    color: #c1121f;
+}
+
+.contenido-comite h3 a:link{
+    color: #c1121f;
+}
+
+.contenido-comite h3 a:visited{
+    color: #c1121f;
+}
+
+.contenido-comite p {
+    font-family: "Kumbh Sans", sans-serif;
+    font-size: var(--step-0);
+    line-height: 1.7;
+    text-align: left;
+    margin: 0 0 0.8rem;
+}
+
+/* RESPONSIVE: TABLET */
+@media (max-width: 900px) {
+    .grupos1,
+    .grupos2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* RESPONSIVE: CELULAR */
+@media (max-width: 600px) {
+    .comites1,
+    .comites2 {
+        padding: 2rem 1rem;
+    }
+
+    .grupos1,
+    .grupos2 {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .comite summary {
+        padding: 1.25rem;
+    }
+}
+
+
+
+/*BOTÓN*/
+.boton-home a{
+    color: #fdf0d5;
+    text-decoration: none;
+    text-shadow: 4px 6px 15px #660606dc;
+}
+
+.boton-home a:link{
+    color: #fdf0d5;
+    text-shadow: 4px 6px 15px #660606dc;
+}
+
+.boton-home a:visited{
+    color: #fdf0d5;
+    text-shadow: 4px 6px 15px #660606dc;
+}
+
+.boton-home{
+    position: fixed;
+    right: 3rem;
+    bottom: 3rem;
+    background: #c1121ecc;
+    width: 190px;
+    border: 2px solid #270202d0;
+    border-radius: 5px;
+    box-shadow: 4px 6px 15px #2b0303e7;
+}
+
+.boton-home h3{
+    font-family: "Cal Sans", sans-serif;
+    font-weight: 400;
+    font-size: var(--step-2);
+    text-align: center;
+}
